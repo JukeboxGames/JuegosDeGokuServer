@@ -1,20 +1,14 @@
-const express = require('express');
-const http = require('http');
 const { createServer } = require('node:http');
-const { join } = require('node:path');
 const { Server } = require('socket.io');
 
-const app = express();
-const server = http.createServer(app);
-const io = new Server(server, {
-  connectionStateRecovery: {}
+const server = createServer();
+const io = new Server({
+  connectionStateRecovery: {},
+  cors: {
+    origin: "*"
+  }
 });
 const PORT = process.env.PORT || 3000; 
-
-app.get('/', (req, res) => {
-  res.write(`<h1>Socket started on port : ${PORT}<h1>`);
-  res.end(); 
-});
 
 io.on('connection', (socket) => {
   console.log(socket.request.headers['user-agent']);
@@ -24,6 +18,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(PORT, () => {
+io.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
