@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
   console.log(socket.request.headers['user-agent']);
   socket.on('chat message', (msg, client_) => {
-    console.log("chat message: ", msg);
+    console.log("chat  message: ", msg);
     io.emit('chat message', msg);
   });
 });
