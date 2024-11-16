@@ -8,9 +8,11 @@ const server = createServer(app);
 const io = new Server(server, {
   connectionStateRecovery: {}
 });
+const PORT = process.env.PORT || 3000; 
 
 app.get('/', (req, res) => {
-  res.sendFile(join(__dirname, 'index.html'));
+  res.write(`<h1>Socket started on port : ${PORT}<h1>`);
+  res.end(); 
 });
 
 io.on('connection', (socket) => {
