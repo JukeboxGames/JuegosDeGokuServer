@@ -1,0 +1,143 @@
+
+.grid-container-dpad {
+  display: grid;
+  justify-self: center;
+  height: 35vh;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-container-lobby {
+  display: grid;
+  justify-self: center;
+}
+
+.grid-container-map {
+  background-image: url(https://imgur.com/xMdNUWc.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
+  display: grid;
+  justify-self: center;
+  height: 50vh;
+  aspect-ratio: 1;
+  grid-template-columns: repeat(34, 1fr);
+  grid-template-rows: repeat(34, 1fr);
+}
+.inputFields {
+  display: grid;
+  justify-self: center;
+  height: 50vh;
+  width: 70vw;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+}
+
+.nickname {
+  border-radius: 12px;
+  background-color: black;
+  border-color: white;
+  color: white;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 30px;
+  margin-top: 5vh;
+  height: 70%;
+  margin-bottom: 5vh;
+}
+
+.nickname:hover{
+  border-color: rgb(251, 37, 37);
+}
+
+.nickname::placeholder{
+  color: rgb(157, 157, 157);
+}
+
+.welcomeImage {
+  max-width: 100%;
+  height: auto;
+  justify-self: center;
+}
+
+.lobbyImage {
+  max-width: 100%;
+  height: 40vh;
+  justify-self: center;
+}
+
+.tiles {
+  text-align: center;
+  font-size: 30px;
+  aspect-ratio: 1;
+  background-color: isButton ? #212121;
+  border-radius: isButton ? 12px;
+}
+
+.button {
+  width: 100%;       
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+@keyframes glowing {
+  0% {
+    background-color: #2ba805;
+    box-shadow: 0 0 10px #2ba805;
+  }
+  50% {
+    background-color: #49e819;
+    box-shadow: 0 0 15px #49e819;
+  }
+  100% {
+    background-color: #2ba805;
+    box-shadow: 0 0 10px #2ba805;
+  }
+}
+.blinkbutton {
+  width: 100%;       
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  animation: glowing 1300ms infinite;
+}
+
+.connectButton {
+  background-color: transparent;
+  border: none; /* Remove default border */
+  cursor: pointer; /* Show a pointer cursor when hovered */
+  outline: none; /* Remove outline for focus (optional) */
+  padding: 0; /* Remove default padding */
+}
+
+.connectButton:hover {
+  opacity: 0.75;
+}
+
+.headerBar {
+  text-align: center;
+  background-color: rgb(108, 49, 108);
+  font-size: xx-large;
+  color: white;
+  align-self: center;
+  width: 100%;
+  height: 10vh;
+}
+
+
+.button:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Light background effect on hover */
+}
+
+code {
+  font-family: "Pixelify Sans", sans-serif;
+}
